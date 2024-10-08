@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            height: 100%;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #a29bfe;
+            padding: 20px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #f5f6fa;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background-color: #6c5ce7;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .logo svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        .menu-item {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            background-color: #6c5ce7;
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: left;
+            width: 100%;
+        }
+
+        .menu-item:hover {
+            background-color: #5d4ed6;
+        }
+
+        .menu-item svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            fill: white;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .welcome-banner {
+            background-color: #a29bfe;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .welcome-banner img {
+            width: 100px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .grid-item {
+            background-color: #6c5ce7;
+            height: 100px;
+            border-radius: 10px;
+        }
+
+        .bottom-boxes {
+            display: flex;
+            gap: 20px;
+        }
+
+        .bottom-box {
+            flex: 1;
+            height: 200px;
+            background-color: #6c5ce7;
+            border-radius: 10px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2L0 9L12 16L22 10.5V17.5H24V9L12 2ZM3.5 9L12 3.5L20.5 9L12 14.5L3.5 9ZM12 16.5L2 10.5V14.5L12 20.5L22 14.5V10.5L12 16.5Z" />
+                </svg>
+            </div>
+            <button class="menu-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
+                </svg>
+                Dashboard
+            </button>
+            <button class="menu-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 3L1 9l11 6l9-4.91V17h2V9L12 3z" />
+                </svg>
+                Courses
+            </button>
+            <button class="menu-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1s-1-.45-1-1s.45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+                </svg>
+                Courses Register
+            </button>
+            <button class="menu-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z" />
+                </svg>
+                Time Table
+            </button>
+            <button class="menu-item">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+                    <defs>
+                    </defs>
+                    <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+                        transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                        <path
+                            d="M 45 3 c 7.785 0 14.118 6.333 14.118 14.118 v 6.139 c 0 7.785 -6.333 14.118 -14.118 14.118 c -7.785 0 -14.118 -6.333 -14.118 -14.118 v -6.139 C 30.882 9.333 37.215 3 45 3 M 45 0 L 45 0 c -9.415 0 -17.118 7.703 -17.118 17.118 v 6.139 c 0 9.415 7.703 17.118 17.118 17.118 h 0 c 9.415 0 17.118 -7.703 17.118 -17.118 v -6.139 C 62.118 7.703 54.415 0 45 0 L 45 0 z"
+                            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
+                            transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                        <path
+                            d="M 55.094 45.846 c 11.177 2.112 19.497 12.057 19.497 23.501 V 87 H 15.409 V 69.347 c 0 -11.444 8.32 -21.389 19.497 -23.501 C 38.097 47.335 41.488 48.09 45 48.09 S 51.903 47.335 55.094 45.846 M 54.639 42.727 C 51.743 44.227 48.47 45.09 45 45.09 s -6.743 -0.863 -9.639 -2.363 c -12.942 1.931 -22.952 13.162 -22.952 26.619 v 17.707 c 0 1.621 1.326 2.946 2.946 2.946 h 59.29 c 1.621 0 2.946 -1.326 2.946 -2.946 V 69.347 C 77.591 55.889 67.581 44.659 54.639 42.727 L 54.639 42.727 z"
+                            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
+                            transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                    </g>
+                </svg>
+                profile
+            </button>
+            <button class="menu-item" style="margin-top: auto;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z" />
+                </svg>
+                Log out
+            </button>
+        </div>
+        <div class="main-content">
+            <input type="text" class="search-bar" placeholder="Search">
+            <div class="welcome-banner">
+                <div>
+                    <h2>Welcome back, Nishi!</h2>
+                    <p>2200560134</p>
+                </div>
+                <img src="./zoro 1062.jpeg" alt="Student">
+            </div>
+            <div class="grid-container">
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+            </div>
+            <div class="bottom-boxes">
+                <div class="bottom-box"></div>
+                <div class="bottom-box"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
